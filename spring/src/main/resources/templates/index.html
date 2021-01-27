@@ -1,0 +1,8 @@
+<div sec:authorize="!isAuthenticated()">
+    You are not authenticated yet
+</div>
+<div sec:authorize="isAuthenticated()">
+
+    Hi, <span sec:authentication="name">preferred_username</span> !
+</div>
+<br /> <a th:href="@{/foos/}">Access restricted 'foo' page </a>

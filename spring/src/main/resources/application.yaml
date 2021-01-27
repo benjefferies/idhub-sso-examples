@@ -1,0 +1,24 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          custom:
+            client-id: fc6eda48-f0df-40eb-9fbc-a8764cc57fa5
+            client-secret: b9123cad-25a9-4fac-b5bf-32d4c5cfbc36
+            scope: profile
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8082/ui-one/login/oauth2/code/custom
+        provider:
+          custom:
+            authorization-uri: https://sso.idhub.io/auth/realms/external/protocol/openid-connect/auth
+            token-uri: https://sso.idhub.io/auth/realms/external/protocol/openid-connect/token
+            user-info-uri: https://sso.idhub.io/auth/realms/external/protocol/openid-connect/userinfo
+            user-name-attribute: preferred_username
+  thymeleaf:
+    cache: false
+
+server:
+  port: 8082
+  servlet:
+    context-path: /ui-one
